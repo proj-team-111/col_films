@@ -1,128 +1,206 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=!, initial-scale=1.0">
-    <link rel="stylesheet" href="https://fonts.google.com/specimen/Open+Sans">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=!, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://fonts.google.com/specimen/Open+Sans" />
     <link rel="icon" type="images/png" href="logo.png" />
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;300;400;500&display=swap"
+      rel="stylesheet"
+    />
     <script src="index.js"></script>
     <title>Sign Up</title>
-</head>
-<body>
-    <header><div class="logo">
-        <img src="Logo.png" alt="logo">
-    </div>
-   </header>
-   <main>
-   <form method="post" action="/" id="form">
-    <!--step one-->
+  </head>
+  <body>
+    <header>
+      <div class="logo">
+        <img src="Logo.png" alt="logo" />
+      </div>
+    </header>
+    <main>
+      <form method="post" id="form" action="/">
+        <!--step one-->
         <div class="content" id="step1">
-            <h4>Step 1 of 3</h4><br>
-            <p>Please input your student registration number.</p>
-            <br>
-            <input type="text" id="regNum" class="input check" placeholder="Registration Number"><br>
-            <div class="error"></div>
-            <br>
-            <button class="btn" id="next" type="button" onclick="next_step1()" >Continue</button>
+          <h4>Step 1 of 3</h4>
+          <br />
+          <p>Please input your student registration number.</p>
+          <br />
+          <input
+            type="text"
+            id="regNum"
+            class="input"
+            placeholder="Registration Number"
+          /><br />
+          <div id="error">This field is required</div>
+          <br />
+          <button class="btn" id="next" type="button" onclick="checkInput()">
+            Continue
+          </button>
         </div>
         <!-- step two-->
         <div class="content" id="step2">
-            <h4>Step 2 of 3</h4><br>
-            <p>An OTP has been sent to the corresponding email address.<br>
-                Kindly input the 6-digit number
-            </p>
-            <div>
-                <div class="userInput">
-                    <input class="OtpInput check" id="ist" type="text" maxlength="1" onkeyup="clickEvent(this,'sec')">
-                    <div class="error"></div>
-                    <input class="OtpInput check" id="sec" type="text" maxlength="1" onkeyup="clickEvent(this,'third')">
-                    <div class="error"></div>
-                    <input class="OtpInput check" id="third" type="text" maxlength="1" onkeyup="clickEvent(this,'fourth')">
-                    <div class="error"></div>
-                    <input class="OtpInput check" id="fourth" type="text" maxlength="1" onkeyup="clickEvent(this,'fifth')">
-                    <div class="error"></div>
-                    <input class="OtpInput check" id="fifth" type="text" maxlength="1" onkeyup="clickEvent(this,'sixth')">
-                    <div class="error"></div>
-                    <input class="OtpInput check" id="sixth" type="text" maxlength="1">
-                    <div class="error"></div>
-                </div>
-               
+          <h4>Step 2 of 3</h4>
+          <br />
+          <p>
+            An OTP has been sent to the corresponding email address.<br />
+            Kindly input the 6-digit number
+          </p>
+          <div>
+            <div class="userInput">
+              <input
+                class="OtpInput"
+                id="ist"
+                type="text"
+                maxlength="1"
+                onkeyup="clickEvent(this,'sec')"
+              />
+
+              <input
+                class="OtpInput"
+                id="sec"
+                type="text"
+                maxlength="1"
+                onkeyup="clickEvent(this,'third')"
+              />
+
+              <input
+                class="OtpInput"
+                id="third"
+                type="text"
+                maxlength="1"
+                onkeyup="clickEvent(this,'fourth')"
+              />
+
+              <input
+                class="OtpInput"
+                id="fourth"
+                type="text"
+                maxlength="1"
+                onkeyup="clickEvent(this,'fifth')"
+              />
+
+              <input
+                class="OtpInput"
+                id="fifth"
+                type="text"
+                maxlength="1"
+                onkeyup="clickEvent(this,'sixth')"
+              />
+
+              <input class="OtpInput" id="sixth" type="text" maxlength="1" />
             </div>
-            <div style="display: flex; gap: 10px;">
-                <p> <small>OTP expires in 10 minutes</small></p>
-                <div style="margin-top: 5px;">
-                    
-                    <span class="count-digit">1</span>
-                    <span class="count-digit">0</span>
-                    <span class="separator">:</span>
-                    <span class="count-digit">0</span>
-                    <span class="count-digit">0</span>
-                 </div>
+          </div>
+          <div style="display: flex; gap: 10px">
+            <p><small>OTP expires in 10 minutes</small></p>
+            <div style="margin-top: 5px">
+              <span class="count-digit">1</span>
+              <span class="count-digit">0</span>
+              <span class="separator">:</span>
+              <span class="count-digit">0</span>
+              <span class="count-digit">0</span>
             </div>
-                <p>I did not receive any otp. <strong>RESEND</strong></p><br>
-            <button type="button" class="btn" onclick="next_step2()">Verify</button>
+          </div>
+          <p>I did not receive any otp. <strong>RESEND</strong></p>
+          <br />
+          <button type="button" class="btn" onclick="next_step2()">
+            Verify
+          </button>
         </div>
         <!-- step three-->
         <div class="content" id="step3">
-            <h4>Step 3 of 3</h4><br>
-            <h4>Create password</h4>
-                <input type="password" placeholder="Input password" id="password" class="input check">
-                <div class="error"></div>
-                <br>
-                <p style=" font-style: italic;">Note: <small>password must be at least 8 alphabet long and must contain at least one upper cose, a number, and a character (e.g:'OneCube@111')</small></p>
-                <input type="password" placeholder="Confirm password" id="password2" class="input check"><br>
-                <div class="error"></div>
-                <br>
-                <label class="checkbox" for="boxId">
-                    <input class="boxInput" type="checkbox" name="checkbox" id="boxId">
-                    <div class="Box"></div>
-                    Remember Me
-                </label><br><br>
-        
-                <button class="btn" type="button">Sign Up</button>
+          <h4>Step 3 of 3</h4>
+          <br />
+          <h4>Create password</h4>
+          <input
+            type="password"
+            placeholder="Input password"
+            id="password"
+            class="input"
+            pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+          />
+          <div id="error1">This field is required</div>
+          <br />
+          <p style="font-style: italic">
+            Note:
+            <small
+              >password must be at least 8 alphabet long and must contain at
+              least one upperCase, and number (e.g:'OneCube111')</small
+            >
+          </p>
+          <input
+            type="password"
+            placeholder="Confirm password"
+            id="password2"
+            class="input"
+          /><br />
+          <div id="error2">This field is required</div>
+          <br />
+          <label class="checkbox" for="boxId">
+            <input
+              class="boxInput"
+              type="checkbox"
+              name="checkbox"
+              id="boxId"
+            />
+            <div class="Box"></div>
+            Remember Me </label
+          ><br /><br />
+
+          <button class="btn" type="button" onclick="checkInput2()">
+            Sign Up
+          </button>
         </div>
         <div class="step-row">
-            <div class="step-col" id="first"></div>
-            <div class="step-col" id="second"></div>
-            <div class="step-col" id="last"></div>
-         </div>
-    </form> 
-
-
-</main>
-    <footer>
-        <div class="container">
-            <div>
-                <ul>
-                    <li><a href="#"> About Us</a></li>
-                    <li><a href="#"> Terms Of Use</a> </li>
-                </ul>
-            </div>
-            <div>
-                <ul>
-                    <li><a href="#"> Home</a> </li>
-                    <li><a href="#"> FAQ</a></li>
-                    <li><a href="#"> Privacy</a></li>
-                    <li><a href="#"> Registration</a></li>
-                </ul>
-            </div>
-
-            <div>
-                <ul>
-                    <li> <a href="#"> Contact Us</a> </li>
-                    <li><i class="fa fa-fw fa-phone icon"></i><a href="#"> Phone Number</a> </li>
-                    <li><i class="fa fa-fw fa-envelope icon"></i><a href="#"> Email address</a> </li>
-                    <li><i class="fa fa-fw fa-facebook icon"></i><a href="#"> Facebook account</a> </li>
-                
-                </ul>
-            </div>
+          <div class="step-col" id="first"></div>
+          <div class="step-col" id="second"></div>
+          <div class="step-col" id="last"></div>
         </div>
+      </form>
+    </main>
+    <footer>
+      <div class="container">
+        <div>
+          <ul>
+            <li><a href="#"> About Us</a></li>
+            <li><a href="#"> Terms Of Use</a></li>
+          </ul>
+        </div>
+        <div>
+          <ul>
+            <li><a href="#"> Home</a></li>
+            <li><a href="#"> FAQ</a></li>
+            <li><a href="#"> Privacy</a></li>
+            <li><a href="#"> Registration</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <ul>
+            <li><a href="#"> Contact Us</a></li>
+            <li>
+              <i class="fa fa-fw fa-phone icon"></i
+              ><a href="#"> Phone Number</a>
+            </li>
+            <li>
+              <i class="fa fa-fw fa-envelope icon"></i
+              ><a href="#"> Email address</a>
+            </li>
+            <li>
+              <i class="fa fa-fw fa-facebook icon"></i
+              ><a href="#"> Facebook account</a>
+            </li>
+          </ul>
+        </div>
+      </div>
     </footer>
-</body>
+  </body>
 </html>
